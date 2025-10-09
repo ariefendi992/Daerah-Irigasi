@@ -1,0 +1,109 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="w-full h-[450px] my-10 relative">
+    <div class="w-full h-full shadow-md rounded-[40px] overflow-hidden">
+      <div class="swiper mySwiper h-full">
+        <div class="swiper-wrapper">
+          {% comment %}slide 1{% endcomment %}
+          <div class="swiper-slide">
+            <img src="{% static 'images/gambar_1.jpg' %}" class="w-full h-full object-cover" alt="slide1" />
+            <div class="absolute inset-0 bg-gradient-to-b from-primary-color/50 to-primary-color/25 h-full w-full flex items-center justify-center text-white font-manrope">
+              {% comment %} <h1 class="uppercase font-extrabold text-6xl text-shadow-2xs">D.I. Oransbari</h1> {% endcomment %}
+            </div>
+          </div>
+
+          {% comment %}slide 2{% endcomment %}
+          <div class="swiper-slide">
+            <img src="{% static 'images/gambar_2.jpg' %}" class="w-full h-full object-cover" alt="slide2" />
+            <div class="absolute inset-0 bg-gradient-to-b from-primary-color/50 to-primary-color/25 h-full w-full flex items-center justify-center text-white font-manrope">
+              {% comment %} <h1 class="uppercase font-extrabold text-6xl text-shadow-2xs">D.I. Oransbari</h1> {% endcomment %}
+            </div>
+          </div>
+
+          {% comment %}slide 3{% endcomment %}
+          <div class="swiper-slide">
+            <img src="{% static 'images/gambar_3.jpg' %}" class="w-full h-full object-cover" alt="slide3" />
+            <div class="absolute inset-0 bg-gradient-to-b from-primary-color/50 to-primary-color/25 h-full w-full flex items-center justify-center text-white font-manrope">
+              {% comment %} <h1 class="uppercase font-extrabold text-6xl text-shadow-2xs">D.I. Oransbari</h1> {% endcomment %}
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </div>
+
+  {% comment %}Monitoring Saluran{% endcomment %}
+  <div class="w-full my-10">
+    <div class="card">
+      <div class="card-header py-2 bg-blue-500/80">
+        <h3 class="card-title text-white">Saluran</h3>
+      </div>
+      <div class="card-body">
+        <table class="border-collapse border border-gray-400 w-full">
+          <thead>
+            <tr>
+              <th class="border border-gray-300">No.</th>
+              <th class="border border-gray-300">Nama Saluran</th>
+              <th class="border border-gray-300">Tgl Monitoring</th>
+              <th class="border border-gray-300">Debit Terukur (Liter/Detik)</th>
+              <th class="border border-gray-300">Kondisi</th>
+              <th class="border border-gray-300">Catatan</th>
+              <th class="border border-gray-300">Foto</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  {% comment %}Monitoring Bangunan{% endcomment %}
+  <div class="w-full my-10">
+    <div class="card">
+      <div class="card-header py-2 bg-green-500/80">
+        <h3 class="card-title text-white">Saluran</h3>
+      </div>
+      <div class="card-body">
+        <table class="border-collapse border border-gray-400 w-full">
+          <thead>
+            <tr>
+              <th class="border border-gray-300">No.</th>
+              <th class="border border-gray-300">Nama Bangunan</th>
+              <th class="border border-gray-300">Tgl Monitoring</th>
+              <th class="border border-gray-300">Debit Terukur (Liter/Detik)</th>
+              <th class="border border-gray-300">Kondisi</th>
+              <th class="border border-gray-300">Catatan</th>
+              <th class="border border-gray-300">Foto</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  {% comment %}Monitoring Petak{% endcomment %}
+  <div class="w-full my-10">
+    <div class="card">
+      <div class="card-header py-2 bg-amber-500/80">
+        <h3 class="card-title text-white">Saluran</h3>
+      </div>
+      <div class="card-body">
+        <table class="border-collapse border border-gray-400 w-full">
+          <thead>
+            <tr>
+              <th class="border border-gray-300">No.</th>
+              <th class="border border-gray-300">Nama Petak</th>
+              <th class="border border-gray-300">Tgl Monitoring</th>
+              <th class="border border-gray-300">Debit Terukur (Liter/Detik)</th>
+              <th class="border border-gray-300">Kondisi</th>
+              <th class="border border-gray-300">Catatan</th>
+              <th class="border border-gray-300">Foto</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+  </div>
+{% endblock %}
