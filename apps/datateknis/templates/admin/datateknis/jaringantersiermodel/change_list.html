@@ -1,0 +1,8 @@
+{% extends 'admin/change_list.html' %}
+
+{% block result_list %}
+  {{ block.super }}
+  {% if total_luasan %}
+    <div style="text-align:right; font-weight:bold; margin:10px 20px;">TOTAL LUASAN (HA): {{ total_luasan|floatformat:2 }}</div>
+  {% endif %}
+{% endblock %}

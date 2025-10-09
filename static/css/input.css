@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-color: #12223b;
+  --color-secondary-color: #e9f7fe;
+  --color-header-color: #213271;
+  /* --color-accent-color: #ffc800; */
+  --color-accent-color: #fdb813;
+  --color-body-color: #f5f6f8;
+  --font-dm-sans: "DM Sans", sans-serif;
+  --font-manrope: "Manrope", sans-serif;
+  --font-font-awesome: "FontAwesome";
+}
+
+@layer base {
+  p {
+    @apply text-base;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white  rounded-lg overflow-hidden shadow-lg outline-1 outline-gray-200;
+  }
+
+  .card-header {
+    @apply px-6 py-5;
+  }
+
+  .card-title {
+    @apply text-xl font-semibold;
+  }
+
+  .card-body {
+    @apply px-6 py-6;
+  }
+
+  .card-footer {
+    @apply px-6 py-5;
+  }
+
+  .link-active {
+    @apply text-accent-color;
+  }
+  .sub-menu {
+    @apply after:content-['\f107'] after:font-font-awesome after:font-medium after:text-base after:ml-2;
+  }
+  .sub-sub-menu {
+    @apply after:content-['\f105'] after:font-font-awesome after:font-medium after:text-base;
+  }
+}

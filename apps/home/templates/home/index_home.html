@@ -1,0 +1,117 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="container w-full mx-auto h-[733px] my-10 relative">
+    <div class="w-full h-full shadow-md rounded-[40px] overflow-hidden">
+      <div class="swiper mySwiper h-full">
+        <div class="swiper-wrapper">
+          {% comment %}slide 1{% endcomment %}
+          <div class="swiper-slide">
+            <img src="{% static 'images/gambar_1.jpg' %}" class="w-full h-full object-cover" alt="slide1" />
+            <div class="absolute inset-0 bg-gradient-to-b from-primary-color/50 to-primary-color/25 h-full w-full flex items-center justify-center text-white font-manrope">
+              {% comment %} <h1 class="uppercase font-extrabold text-6xl text-shadow-2xs">D.I. Oransbari</h1> {% endcomment %}
+            </div>
+          </div>
+
+          {% comment %}slide 2{% endcomment %}
+          <div class="swiper-slide">
+            <img src="{% static 'images/gambar_2.jpg' %}" class="w-full h-full object-cover" alt="slide2" />
+            <div class="absolute inset-0 bg-gradient-to-b from-primary-color/50 to-primary-color/25 h-full w-full flex items-center justify-center text-white font-manrope">
+              {% comment %} <h1 class="uppercase font-extrabold text-6xl text-shadow-2xs">D.I. Oransbari</h1> {% endcomment %}
+            </div>
+          </div>
+
+          {% comment %}slide 3{% endcomment %}
+          <div class="swiper-slide">
+            <img src="{% static 'images/gambar_3.jpg' %}" class="w-full h-full object-cover" alt="slide3" />
+            <div class="absolute inset-0 bg-gradient-to-b from-primary-color/50 to-primary-color/25 h-full w-full flex items-center justify-center text-white font-manrope">
+              {% comment %} <h1 class="uppercase font-extrabold text-6xl text-shadow-2xs">D.I. Oransbari</h1> {% endcomment %}
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </div>
+
+  {% comment %}umum{% endcomment %}
+  <div class="container mx-auto w-full my-10 overflow-hidden rounded-[40px]">
+    <div class="card max-w-9/12 mx-auto py-4">
+      <div class="card-body">
+        <div class="flex gap-8 items-center justify-center">
+          <div class="max-w-4/12 rounded-2xl overflow-hidden outline-4 outline-accent-color relative self-stretch">
+            <img src="{% static 'images/gambar_0.jpg' %}" class="w-full h-full object-cover" alt="" />
+
+            <div class="absolute inset-0 bg-primary-color/25 h-full w-full"></div>
+          </div>
+          <div class="max-w-7/12 flex flex-col">
+            <h3 class="text-lg text-accent-color font-bold tracking-wider">TENTANG</h3>
+            <h2 class="font-manrope font-extrabold text-[40px] text-primary-color">{{ dataUmum.daerah_irigasi_id }}</h2>
+            {{ dataUmum.deskripsi|safe }}
+            {% comment %} <p class="indent-8 text-justify font-medium text-gray-700">Distrik Oransbari terletak di Kab. Manokwari Selatan, Provinsi Papua Barat. Distrik ini memiliki rata-rata ketinggian adalah 26,71mdpl dan luas 239,67 KM2. Distrik Oransbari terdiri dari 14 kampung, yaitu Akeju, Margorukun, Margomulyo, Masabui, Masabui 2, Muari, Oransbari, Sidomulyo, Sindang Jaya, Wandoki, Warbiadi, Warkwandi, Waroser, dan Watariri. Jumlah penduduk Distrik Oransbari diperkirakan mencapai 8.031 jiwa dengan jenis kelamin laki-laki sebanyak 4.129 jiwa dan perempuan sebanyak 3.902 jiwa.</p>
+
+            <p class="my-4 font-medium text-gray-700">
+              Batas geografi Distrik Oransbari meliputi: <br />
+              <span class="ml-4">Sebelah Utara : Tanah Rubuh</span> <br />
+              <span class="ml-4">Sebelah Selatan : Ransiki</span> <br />
+              <span class="ml-4">Sebelah Barat : Ransiki</span> <br />
+              <span class="ml-4">Sebelah Timur : Teluk Cendrawasih</span>
+            </p>
+            <p class="indent-8 text-justify font-medium text-gray-700">Distrik Oransbari memiliki potensi pertanian dengan komoditas utama hasil panen adalah padi. Berdasarkan Permen PUPR Nomor 14 Tahun 2015 Daerah Irigasi Oransbari masuk dalam daerah irigasi kewenangan pusat dengan luasan baku sebesar 3.016. Sumber air irigasi D.I. Oransbari berasal dari 4 bendung (Bendung Warbiadi, Bendung Waroser, Bendung Sidang Jaya, Bendung Muari) dan 14 buah embung.</p> {% endcomment %}
+            {% comment %} <p>Batas geografi Distrik Oransbari meliputi:</p>
+            <div></div> {% endcomment %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% comment %}Sumber Air{% endcomment %}
+
+  <div class="w-full my-10 h-auto py-10 bg-secondary-color">
+    <h3 class="text-lg text-accent-color font-bold tracking-wider text-center">SUMBER AIR D.I. ORANSBARI</h3>
+    <div class="mt-8 w-full flex justify-center gap-12">
+      {% for item in dataSumberAir %}
+        <a href="{{ item.selengkap_url }}">
+          <div class="card w-80 h-[460px] rounded-2xl">
+            <div class="card-body p-0 w-full h-full relative group">
+              <img src="{% static 'images/bendung_waroser_1.jpg' %}" class="w-full h-full object-cover self-stretch" alt="" />
+              <div class="absolute inset-0 bg-gradient-to-b from-primary-color/75 to-gray-400/20 h-full w-full px-6 py-5">
+                {% comment %}content{% endcomment %}
+                <div class="mt-6 group-hover:mt-2 transition-all ease-in duration-300">
+                  <h2 class="text-gray-200 font-bold text-3xl">{{ item.nama_sumber_air }}</h2>
+                  <p class="invisible duration-300 mt-2 text-accent-color font-bold transition transform ease-out translate-y-10 group-hover:translate-y-0 group-hover:visible">Selengkapnya ...</p>
+                  <div class="invisible group-hover:visible flex w-full h-full justify-center items-center text-white absolute top-0 left-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-9">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+      {% endfor %}
+
+      {% comment %} <a href="">
+        <div class="card w-80 h-[460px] rounded-2xl">
+          <div class="card-body p-0 w-full h-full relative group">
+            <img src="{% static 'images/bendung_waroser_1.jpg' %}" class="w-full h-full object-cover self-stretch" alt="" />
+            <div class="absolute inset-0 bg-gradient-to-b from-primary-color/75 to-gray-400/20 h-full w-full px-6 py-5">
+              <h2 class="text-gray-200 font-bold text-3xl">Bendung</h2>
+              <p class="invisible group-hover:visible ease-in duration-200 mt-4 text-accent-color font-medium">Selengkapnya ...</p>
+              <div class="invisible group-hover:visible flex w-full h-full justify-center items-center text-white absolute top-0 left-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-9">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a> {% endcomment %}
+    </div>
+  </div>
+{% endblock %}

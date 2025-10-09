@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monitoring Daerah Irigasi Oransbari</title>
+
+    {% comment %}favicon{% endcomment %}
+    <link rel="icon" type="image/svg+xml" href="{% static 'images/favicon.ico' %}" />
+
+    {% comment %}google fonts{% endcomment %}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    {% comment %}Manrope{% endcomment %}
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
+    {% comment %}DM Sans{% endcomment %}
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet" />
+    {% comment %}font Awesome{% endcomment %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    {% comment %}swiper js{% endcomment %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    {% comment %}custom css{% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/output.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}" />
+  </head>
+  <body class="bg-body-color font-dm-sans">
+    <header id="header" class="w-full h-[75px] sticky top-0 z-20 bg-header-color border-b-4 border-accent-color font-manrope">
+      {% include 'layouts/navbar.html' %}
+    </header>
+
+    <section class="w-full my-10">
+      {% block content %}
+
+      {% endblock %}
+    </section>
+
+    <footer class="w-full mt-20 bg-primary-color py-8">
+      {% include 'layouts/footer.html' %}
+    </footer>
+
+    {% comment %}swiper js{% endcomment %}
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="{% static 'js/custom.js' %}"></script>
+  </body>
+</html>
