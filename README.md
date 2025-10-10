@@ -9,3 +9,6 @@ Daerah Irigasi yang dikelola oleh BWS Papua Barat meliputi wilayah-wilayah yang 
 - [ ] Data P3A
 - [ ] Data Masa Tanam
 - [ ] Data Pengembangan D.I.
+
+
+#### Note: Project di Bangun Menggunakan Python dan Tailwind CSS
