@@ -40,12 +40,27 @@
   }
 
   .link-active {
-    @apply text-accent-color;
+    @apply text-accent-color font-bold;
   }
-  .sub-menu {
+
+  .dropdown-menu {
+    @apply flex flex-col absolute font-medium bg-accent-color py-3 rounded-md invisible mt-4 group-hover:visible opacity-0 translate-y-[-10px] scale-y-75 origin-top transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-y-100;
+  }
+  .dropdown-menu-icon {
     @apply after:content-['\f107'] after:font-font-awesome after:font-medium after:text-base after:ml-2;
   }
-  .sub-sub-menu {
+  .sub-menu-icon {
     @apply after:content-['\f105'] after:font-font-awesome after:font-medium after:text-base;
+  }
+  .menu-hover {
+    @apply hover:text-primary-color hover:font-bold;
+  }
+
+  .sub-menu-link {
+    @apply inline-block py-1 px-4 transition duration-200 hover:translate-x-1 whitespace-nowrap;
+  }
+
+  .dropdown-sub-menu {
+    @apply absolute left-full ml-0.5 mt-0 top-0 bg-accent-color rounded-md py-3 w-auto inline-block transition-all translate-y-[20px] duration-500 ease-out opacity-0 group-hover/sub:opacity-100 group-hover/sub:translate-y-0;
   }
 }

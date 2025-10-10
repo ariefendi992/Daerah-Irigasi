@@ -25,7 +25,8 @@ urlpatterns = [
     path("chaining/", include("smart_selects.urls")),
     path("ckeditor/", include("ckeditor_uploader.urls")),
     path("", include("apps.home.urls"), name="homePage"),
-    path("", include("apps.monitoring.urls"), name="monitorings"),
+    path("", include("apps.monitoring.urls"), name="monitoringPage"),
+    path("data-teniks/", include("apps.datateknis.urls"), name="dataTeknisPage"),
 ]
 
 

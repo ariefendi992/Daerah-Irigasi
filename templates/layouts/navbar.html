@@ -14,58 +14,58 @@
         <a href="/" class="{% if page_name == 'indexHomePage' %} link-active {% endif %}">Beranda</a>
       </li>
       <li class="group py-5">
-        <a href="" class="sub-menu">Data Teknis</a>
-        <ul class="flex flex-col absolute font-medium bg-accent-color px-4 py-3 rounded-md invisible mt-4 group-hover:visible opacity-0 translate-y-[-10px] scale-y-75 origin-top transition-all duration-300 ease-out hove group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-y-100">
+        <a href="" class="dropdown-menu-icon">Data Teknis</a>
+        <ul class="dropdown-menu">
           <li>
-            <a href="" class="py-2 inline-block transition duration-200 hover:translate-x-1 hover:text-primary-color">Peta D.I</a>
+            <a href="{% url 'petaDI' %}" class="py-2 sub-menu-link menu-hover">Peta D.I</a>
           </li>
 
           {% comment %}Sumber Air Irigasi{% endcomment %}
-          <li class="relative group">
-            <a href="" class="py-2 w-full flex justify-between transition duration-200 hover:translate-x-1 hover:text-primary-color sub-sub-menu">Sumber Air D.I.</a>
+          <li class="relative group/sub">
+            <a href="" class="w-full flex justify-between sub-menu-icon menu-hover sub-menu-link">Sumber Air D.I.</a>
             {% comment %}sub-sub menu{% endcomment %}
-            <ul class=" absolute left-full pl-12 mt-0 top-0 bg-accent-color rounded-md py-4 px-4 w-48 transition-all duration-300 border-primary opacity-0 hover:opacity-100">
-              <li class="relative group">
-                <a href="" class="inline-block py-2">Bendung</a>
+            <ul class="dropdown-sub-menu">
+              <li class="">
+                <a href="" class="sub-menu-link menu-hover">Bendung</a>
               </li>
-              <li class="relative group">
-                <a href="" class="inline-block py-2">Embung</a>
+              <li class="">
+                <a href="" class="sub-menu-link menu-hover">Embung</a>
               </li>
-              <li class="relative group">
-                <a href="" class="inline-block py-2">Ketersediaan Air</a>
+              <li class="w-auto">
+                <a href="" class="sub-menu-link menu-hover">Ketersediaan Air</a>
               </li>
             </ul>
           </li>
           <li>
-            <a href="" class="py-2 inline-block transition duration-200 hover:translate-x-1 hover:text-primary-color">Skema</a>
+            <a href="" class="py-2 sub-menu-link menu-hover">Skema</a>
           </li>
           <li>
-            <a href="" class="py-2 inline-block transition duration-200 hover:translate-x-1 hover:text-primary-color">Jaringan Irigasi Utama</a>
+            <a href="" class="py-2 sub-menu-link menu-hover">Jaringan Irigasi Utama</a>
           </li>
           <li>
-            <a href="" class="py-2 inline-block transition duration-200 hover:translate-x-1 hover:text-primary-color">Petuas OP</a>
-          </li>
-        </ul>
-      </li>
-      <li class="group py-5">
-        <a href="" class="sub-menu">P3A</a>
-        <ul class="flex flex-col absolute font-medium bg-accent-color px-4 py-3 rounded-md invisible mt-4 group-hover:visible opacity-0 translate-y-[-10px] scale-y-75 origin-top transition-all duration-300 ease-out hove group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-y-100">
-          <li>
-            <a href="" class="py-2 inline-block transition duration-200 hover:translate-x-1 hover:text-primary-color">Daftar IP3A/GP3A/P3A</a>
-          </li>
-          <li>
-            <a href="" class="py-2 inline-block transition duration-200 hover:translate-x-1 hover:text-primary-color">Wilayah Kerja IP3A/GP3A/P3A</a>
+            <a href="" class="py-2 sub-menu-link menu-hover">Petuas OP</a>
           </li>
         </ul>
       </li>
       <li class="group py-5">
-        <a href="" class="sub-menu">Masa Tanam</a>
-        <ul class="flex flex-col absolute font-medium bg-accent-color px-4 py-3 rounded-md invisible mt-4 group-hover:visible opacity-0 translate-y-[-10px] scale-y-75 origin-top transition-all duration-300 ease-out hove group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-y-100">
+        <a href="" class="dropdown-menu-icon">P3A</a>
+        <ul class="dropdown-menu">
           <li>
-            <a href="" class="py-2 inline-block transition duration-200 hover:translate-x-1 hover:text-primary-color">Produktivitas Padi</a>
+            <a href="" class="py-2 sub-menu-link menu-hover">Daftar IP3A/GP3A/P3A</a>
           </li>
           <li>
-            <a href="" class="py-2 inline-block transition duration-200 hover:translate-x-1 hover:text-primary-color">Realisasi Luas Masa Tanam</a>
+            <a href="" class="py-2 sub-menu-link menu-hover">Wilayah Kerja IP3A/GP3A/P3A</a>
+          </li>
+        </ul>
+      </li>
+      <li class="group py-5">
+        <a href="" class="dropdown-menu-icon">Masa Tanam</a>
+        <ul class="dropdown-menu">
+          <li>
+            <a href="" class="py-2 sub-menu-link menu-hover">Produktivitas Padi</a>
+          </li>
+          <li>
+            <a href="" class="py-2 sub-menu-link menu-hover">Realisasi Luas Masa Tanam</a>
           </li>
         </ul>
       </li>
