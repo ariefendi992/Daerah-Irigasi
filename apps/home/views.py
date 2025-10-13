@@ -11,7 +11,7 @@ def index_home(request):
     # print(f"Data Umum : {data_umum.daerah_irigasi_id}")
 
     context = {
-        "page_name": "indexHomePage",
+        "pageName": "indexHomePage",
         "dataSumberAir": data_sumber_air,
         "dataUmum": data_umum,
     }

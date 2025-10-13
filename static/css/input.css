@@ -39,28 +39,47 @@
     @apply px-6 py-5;
   }
 
+  /* jika halaman aktif maka ini akan di implementasikan */
   .link-active {
-    @apply text-accent-color font-bold;
+    @apply lg:text-accent-color font-bold text-primary-color;
   }
 
+  /* berada pada elemen li pada menu utama di luar dropdown */
+  .nav-menu {
+    @apply relative;
+  }
+
+  /* berada pada elemen a atau elemen div yang dibungkus pada menu bar utama */
+  .nav-link {
+    @apply flex items-center p-4 cursor-pointer transition-all duration-300 ease-in-out group-hover:text-accent-color;
+  }
+
+  /* untuk element li yang berada pada dropdown level 1 dan level 2 */
+  .nav-submenu {
+    @apply relative p-0 m-0;
+  }
+
+  /* untuk element a yang berada dalam dropdown level 1 dan level 2 */
+  .nav-submenu-link {
+    @apply px-5 py-2 block w-full transition-all duration-300 ease-in-out hover:text-primary-color hover:pl-6;
+  }
+
+  /* card drowdown menu hover*/
   .dropdown-menu {
-    @apply flex flex-col absolute font-medium bg-accent-color py-3 rounded-md invisible mt-4 group-hover:visible opacity-0 translate-y-[-10px] scale-y-75 origin-top transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-y-100;
-  }
-  .dropdown-menu-icon {
-    @apply after:content-['\f107'] after:font-font-awesome after:font-medium after:text-base after:ml-2;
-  }
-  .sub-menu-icon {
-    @apply after:content-['\f105'] after:font-font-awesome after:font-medium after:text-base;
-  }
-  .menu-hover {
-    @apply hover:text-primary-color hover:font-bold;
+    @apply invisible opacity-0 scale-y-75 origin-top p-0 m-0 w-[250px] rounded-2xl absolute left-0 top-full  bg-accent-color transition-all duration-300 ease-in-out text-left block;
   }
 
-  .sub-menu-link {
-    @apply inline-block py-1 px-4 transition duration-200 hover:translate-x-1 whitespace-nowrap;
+  /* dropdown menu hover berada pada sub menu  level 1 */
+  .dropdown-menu-hover {
+    @apply group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible group-hover:py-1;
   }
 
-  .dropdown-sub-menu {
-    @apply absolute left-full ml-0.5 mt-0 top-0 bg-accent-color rounded-md py-3 w-auto inline-block transition-all translate-y-[20px] duration-500 ease-out opacity-0 group-hover/sub:opacity-100 group-hover/sub:translate-y-0;
+  /* dropdown menu hover berada pada sub menu level 2*/
+  .dropdown-submenu-hover {
+    @apply ml-1.5 top-0 left-full group-hover/sub:opacity-100 group-hover/sub:scale-y-100 group-hover/sub:visible group-hover/sub:py-1;
+  }
+
+  .sub-menu {
+    @apply flex justify-between items-center;
   }
 }

@@ -22,20 +22,25 @@
     {% comment %}swiper js{% endcomment %}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
+    {% comment %}Remix Icon{% endcomment %}
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet" />
+    {% comment %} <link rel="stylesheet" href="{% static 'css/remixicon.css' %}" /> {% endcomment %}
+
     {% comment %}custom css{% endcomment %}
     <link rel="stylesheet" href="{% static 'css/output.css' %}" />
     <link rel="stylesheet" href="{% static 'css/custom.css' %}" />
   </head>
   <body class="bg-body-color font-dm-sans">
-    <header id="header" class="w-full h-[75px] sticky top-0 z-20 bg-header-color border-b-4 border-accent-color font-manrope">
+    <header id="header" class="w-full h-[80px] sticky top-0 z-20 bg-header-color border-b-4 border-accent-color font-manrope">
       {% include 'layouts/navbar.html' %}
     </header>
 
-    <section class="w-full my-10">
+    <div class="w-full my-10">
+      {% comment %}Hero content{% endcomment %}
       {% block content %}
 
       {% endblock %}
-    </section>
+    </div>
 
     <footer class="w-full mt-20 bg-primary-color py-8">
       {% include 'layouts/footer.html' %}
