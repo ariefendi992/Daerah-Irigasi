@@ -6,4 +6,3 @@ node_modules/
 *migrations/
 testing.py
 .ex/
-.custom.
