@@ -5,3 +5,5 @@ node_modules/
 *.zip
 *migrations/
 testing.py
+.ex/
+.custom.
