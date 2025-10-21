@@ -1,0 +1,26 @@
+{% extends '_base.html' %}
+{% load static %}
+{% block content %}
+  <section class="container mx-auto mt-10 w-full h-screen">
+    <h3 class="text-lg text-accent-color font-bold tracking-wider text-center uppercase">Peta Daerah Irigasi Oransbari</h3>
+
+    <div class="w-full h-screen mt-4 bg-gray-100 flex items-start justify-center gap-6 flex-wrap">
+      {% comment %}Item card{% endcomment %}
+      <div class="card w-9/12 h-fit">
+        <div class="card-body p-0">
+          <img src="{{ data.preview_peta.url }}" class="w-full h-full object-cover" alt="" />
+          <div class="px-4 my-2 flex flex-col gap-2 w-full">
+            <h3 class="text-primary-color font-semibold uppercase">{{ data.nama_peta }} | {{ data.tgl_upload.date }}</h3>
+            {% comment %} <div class="flex justify-between w-full items-center">
+              <p class="text-primary-color/75">Tgl: {{ data.tgl_upload.date }}</p>
+              <a href="" class="px-4 py-1.5 transition-all duration-300 ease-out hover:bg-primary-color hover:text-white hover:shadow-lg font-medium bg-secondary-color rounded-2xl overflow-hidden shadow-md">Lihat Peta</a>
+            </div> {% endcomment %}
+          </div>
+        </div>
+      </div>
+    </div>
+    {% comment %} <div class="absolute w-full h-full top-0 bg-primary-color/50">
+      <img src="{{ data.preview_peta.url }}" class="w-full h-full object-cover p-36" alt="" />
+    </div> {% endcomment %}
+  </section>
+{% endblock %}

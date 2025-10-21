@@ -12,6 +12,7 @@ def index_home(request):
 
     context = {
         "pageName": "indexHomePage",
+        "titlePage": "Beranda",
         "dataSumberAir": data_sumber_air,
         "dataUmum": data_umum,
     }

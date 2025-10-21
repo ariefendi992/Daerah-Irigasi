@@ -2,7 +2,8 @@
 {% load static %}
 
 {% block content %}
-  <div class="container w-full mx-auto h-[733px] my-10 relative">
+  {% comment %}Hero content{% endcomment %}
+  <section class="container w-full mx-auto h-[733px] my-10 relative">
     <div class="w-full h-full shadow-md rounded-[40px] overflow-hidden">
       <div class="swiper mySwiper h-full">
         <div class="swiper-wrapper">
@@ -33,10 +34,10 @@
         <div class="swiper-pagination"></div>
       </div>
     </div>
-  </div>
+  </section>
 
   {% comment %}umum{% endcomment %}
-  <div class="container mx-auto w-full my-10 overflow-hidden rounded-[40px]">
+  <section class="container mx-auto w-full my-10 overflow-hidden rounded-[40px]">
     <div class="card max-w-9/12 mx-auto py-4">
       <div class="card-body">
         <div class="flex gap-8 items-center justify-center">
@@ -65,11 +66,11 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
   {% comment %}Sumber Air{% endcomment %}
 
-  <div class="w-full my-10 h-auto py-10 bg-secondary-color">
+  <section class="w-full my-10 h-auto py-10 bg-secondary-color">
     <h3 class="text-lg text-accent-color font-bold tracking-wider text-center">SUMBER AIR D.I. ORANSBARI</h3>
     <div class="mt-8 w-full flex justify-center gap-12">
       {% for item in dataSumberAir %}
@@ -113,5 +114,5 @@
         </div>
       </a> {% endcomment %}
     </div>
-  </div>
+  </section>
 {% endblock %}

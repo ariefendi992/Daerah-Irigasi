@@ -1,0 +1,36 @@
+{% extends '_base.html' %}
+
+{% block content %}
+  <section class="max-w-6xl w-full lg:container mx-auto">
+    <h3 class="text-lg text-accent-color font-bold tracking-wider text-center uppercase">Data Jaringan Tersier</h3>
+
+    <div class="px-4 lg:px-0 mt-7 rounded-md overflow-hidden w-full lg:max-w-6xl mx-auto">
+      <div class="relative overflow-x-auto">
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500">
+          <thead class="text-gray-700 uppercase bg-gray-400 text-center">
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col" class="text-left">Nama Bangunan</th>
+              <th scope="col">Nama Petak</th>
+              <th scope="col">Luasan (HA)</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in dataTersier %}
+              <tr>
+                <td>{{ forloop.counter }}</td>
+                <td class="text-left">{{ item.bangunan }}</td>
+                <td>{{ item.nama_petak }} {{ item.bangunan.kode }}</td>
+                <td>{{ item.luasan }}</td>
+              </tr>
+            {% endfor %}
+            <tr class="text-base text-primary-color bg-gray-400/50">
+              <td colspan="3" class="font-semibold">Total Luasan (Ha)</td>
+              <td class="font-semibold">{{ totalLuasan }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+{% endblock %}

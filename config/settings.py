@@ -126,7 +126,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # LANGUAGE_CODE = "en-us"
 LANGUAGE_CODE = "id"
 
-TIME_ZONE = "UTC"
+# TIME_ZONE = "UTC"
+TIME_ZONE = "Asia/Jayapura"
 
 USE_I18N = True
 

@@ -1,0 +1,237 @@
+{% extends '_base.html' %}
+
+{% block content %}
+  <section class="container mx-auto my-10 w-full md:container md:px-4 lg:max-w-6xl">
+    <h3 class="text-lg text-accent-color font-bold tracking-wider text-center uppercase">Data {{ data.nama_bendung }}</h3>
+
+    {% comment %}Card 2{% endcomment %}
+
+    <div class="card w-full mt-7 mx-auto rounded-4xl lg:max-w-10/12">
+      <div class="card-body p-0">
+        <div class="grid lg:grid-cols-[auto_1fr] gap-6 items-center">
+          <div class="rounded-r-4xl overflow-hidden lg:max-h-[550px] lg:max-w-[400px]">
+            <img src="{{ data.file_foto.url }}" class="w-full h-full object-cover" alt="" />
+          </div>
+          <div class="py-2">
+            <h3 class="text-2xl text-primary-color font-bold tracking-wider uppercase">{{ data.nama_bendung }}</h3>
+            {% comment %}======== Detail Data Bendung ========{% endcomment %}
+            <div class="bg-secondary-color px-4 py-2 mr-4 text-base text-primary-color font-medium rounded-2xl overflow-hidden mt-4">
+              <ul class="grid md:gap-y-2.5">
+                <li class="">
+                  <div class="grid grid-cols-[auto_7px_1fr] gap-x-1.5 items-start">
+                    <div class="flex items-center">
+                      <div class="size-5 mr-2 flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.0" stroke="currentColor" class="size-5 bg-accent-color rounded-full text-white p-[2.5px]">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                      </div>Koordinat
+                    </div>
+                    <div>:</div>
+                    <div>{{ data.koordinat }}</div>
+                  </div>
+                </li>
+                <li class="">
+                  <div class="grid grid-cols-[auto_7px_1fr] gap-x-1.5 items-start">
+                    <div class="flex items-center">
+                      <div class="size-5 mr-2 flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.0" stroke="currentColor" class="size-5 bg-accent-color rounded-full text-white p-[2.5px]">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                      </div>Lokasi
+                    </div>
+                    <div>:</div>
+                    <div>{{ data.lokasi }}</div>
+                  </div>
+                </li>
+                <li class="">
+                  <div class="grid grid-cols-[auto_7px_1fr] gap-x-1.5 items-start">
+                    <div class="flex items-center">
+                      <div class="size-5 mr-2 flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.0" stroke="currentColor" class="size-5 bg-accent-color rounded-full text-white p-[2.5px]">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                      </div>Sumber Air
+                    </div>
+                    <div>:</div>
+                    <div>{{ data.sumber_air }}</div>
+                  </div>
+                </li>
+                <li class="">
+                  <div class="grid grid-cols-[auto_7px_1fr] gap-x-1.5 items-start">
+                    <div class="flex items-center">
+                      <div class="size-5 mr-2 flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.0" stroke="currentColor" class="size-5 bg-accent-color rounded-full text-white p-[2.5px]">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                      </div>Debit
+                    </div>
+                    <div>:</div>
+                    <div>{{ data.debit }}</div>
+                  </div>
+                </li>
+                <li class="">
+                  <div class="grid grid-cols-[auto_7px_1fr] gap-x-1.5 items-start">
+                    <div class="flex items-center">
+                      <div class="size-5 mr-2 flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.0" stroke="currentColor" class="size-5 bg-accent-color rounded-full text-white p-[2.5px]">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                      </div>Luast Petak Di Aliri
+                    </div>
+                    <div>:</div>
+                    <div>{{ data.luas_petak_dialiri }}</div>
+                  </div>
+                </li>
+                <li class="">
+                  <div class="grid grid-cols-[auto_7px_1fr] gap-x-1.5 items-start">
+                    <div class="flex items-center">
+                      <div class="size-5 mr-2 flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.0" stroke="currentColor" class="size-5 bg-accent-color rounded-full text-white p-[2.5px]">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                      </div>Tinggi
+                    </div>
+                    <div>:</div>
+                    <div>{{ data.tinggi_bendung }}</div>
+                  </div>
+                </li>
+                <li class="">
+                  <div class="grid grid-cols-[auto_7px_1fr] gap-x-1.5 items-start">
+                    <div class="flex items-center">
+                      <div class="size-5 mr-2 flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.0" stroke="currentColor" class="size-5 bg-accent-color rounded-full text-white p-[2.5px]">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                      </div>Lebar
+                    </div>
+                    <div>:</div>
+                    <div>{{ data.lebar_bendung }}</div>
+                  </div>
+                </li>
+                <li class="">
+                  <div class="grid grid-cols-[auto_7px_1fr] gap-x-1.5 items-start">
+                    <div class="flex items-center">
+                      <div class="size-5 mr-2 flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.0" stroke="currentColor" class="size-5 bg-accent-color rounded-full text-white p-[2.5px]">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                      </div>Jenis Mercu
+                    </div>
+                    <div>:</div>
+                    <div>{{ data.jenis_mercu }}</div>
+                  </div>
+                </li>
+                <li class="">
+                  <div class="grid grid-cols-[auto_7px_1fr] gap-x-1.5 items-start">
+                    <div class="flex items-center">
+                      <div class="size-5 mr-2 flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.0" stroke="currentColor" class="size-5 bg-accent-color rounded-full text-white p-[2.5px]">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                      </div>Tipe Kolam Olak
+                    </div>
+                    <div>:</div>
+                    <div>{{ data.tipe_kolam_olak }}</div>
+                  </div>
+                </li>
+                <li class="">
+                  <div class="grid grid-cols-[auto_7px_1fr] gap-x-1.5 items-start">
+                    <div class="flex items-center">
+                      <div class="size-5 mr-2 flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.0" stroke="currentColor" class="size-5 bg-accent-color rounded-full text-white p-[2.5px]">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                      </div>Statis Kepemilikkan Aset
+                    </div>
+                    <div>:</div>
+                    <div>{{ data.status_kepemilikan_aset }}</div>
+                  </div>
+                </li>
+                <li class="">
+                  <div class="grid grid-cols-[auto_7px_1fr] gap-x-1.5 items-start">
+                    <div class="flex items-center">
+                      <div class="size-5 mr-2 flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.0" stroke="currentColor" class="size-5 bg-accent-color rounded-full text-white p-[2.5px]">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                      </div>Status Operasi & Pemeliharaan
+                    </div>
+                    <div>:</div>
+                    <div>{{ data.status_operasi_pemeliharaan }}</div>
+                  </div>
+                </li>
+                <li class="">
+                  <div class="grid grid-cols-[auto_7px_1fr] gap-x-1.5 items-start">
+                    <div class="flex items-center">
+                      <div class="size-5 mr-2 flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.0" stroke="currentColor" class="size-5 bg-accent-color rounded-full text-white p-[2.5px]">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                      </div>Tahun Pembangunan
+                    </div>
+                    <div>:</div>
+                    <div>{{ data.th_pembangunan }}</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% comment %}Card 1{% endcomment %}
+    {% comment %}
+
+    <div class="card max-w-fit mx-auto">
+      <div class="card-header text-center border-b-4 border-primary-color/50 pb-1.5">
+        <h3 class="card-title">{{ data.nama_bendung }}</h3>
+      </div>
+      <div class="card-body mx-2">
+        <div class="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-10 items-start">
+          <div class="max-w-xs rounded-2xl shadow-md overflow-hidden">
+            <img src="{{ data.file_foto.url }}" class="w-full" alt="" />
+          </div>
+          <div class="grid grid-cols-[auto_7px_1fr] gap-x-4 gap-y-4">
+            <p class="">Koordinat</p>
+            <p class="">:</p>
+            <p class="">{{ data.koordinat }}</p>
+            <p class="">Lokasi</p>
+            <p class="">:</p>
+            <p class="">{{ data.lokasi }}</p>
+            <p class="">Sumber Air</p>
+            <p class="">:</p>
+            <p class="">{{ data.sumber_air }}</p>
+            <p class="">Debit</p>
+            <p class="">:</p>
+            <p class="">{{ data.debit }}</p>
+            <p class="">Luas Petak Di Aliri</p>
+            <p class="">:</p>
+            <p class="">{{ data.luas_petak_dialiri }}</p>
+            <p class="">Tinggi Bendung</p>
+            <p class="">:</p>
+            <p class="">{{ data.tinggi_bendung }}</p>
+            <p class="">Lebar Bendung</p>
+            <p class="">:</p>
+            <p class="">{{ data.lebar_bendung }}</p>
+            <p class="">Jenis Mercu</p>
+            <p class="">:</p>
+            <p class="">{{ data.jenis_mercu }}</p>
+            <p class="">Tipe Kolam Olak</p>
+            <p class="">:</p>
+            <p class="">{{ data.tipe_kolam_olak }}</p>
+            <p class="">Status Kepemilikan Aset</p>
+            <p class="">:</p>
+            <p class="">{{ data.status_kepemilikan_aset }}</p>
+            <p class="">Status Operasi & Pemeliharaan</p>
+            <p class="">:</p>
+            <p class="">{{ data.status_operasi_pemeliharaan }}</p>
+            <p class="">Tahun Pembangunan</p>
+            <p class="">:</p>
+            <p class="">{{ data.th_pembangunan }}</p>
+          </div>
+        </div>
+      </div>
+    </div> {% endcomment %}
+  </section>
+{% endblock %}

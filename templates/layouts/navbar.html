@@ -1,5 +1,5 @@
 {% load static %}
-<nav class="h-full w-full mx-auto flex justify-between font-manrope text-white max-w-6xl lg:container">
+<nav class="h-full w-full mx-auto flex justify-between font-manrope text-white max-w-6xl px-4 lg:px-0 lg:container z-50">
   {% comment %}brand logo{% endcomment %}
   <div class="flex items-center">
     <a href="#" class="h-[40px] w-[40px] lg:h-[50px] lg:w-[50px] overflow-hidden rounded-md"><img src="{% static 'images/logo-pu.jpeg' %}" class="w-full h-full object-cover" alt="logo" /></a>
@@ -11,10 +11,10 @@
   </div>
 
   {% comment %}menu desktop{% endcomment %}
-  <div class="flex items-center gap-4">
+  <div class="hidden lg:flex items-center gap-4">
     <ul class="flex items-center mx-1.5 text-lg font-medium">
       <li class="nav-menu group">
-        <a href="" class="nav-link">
+        <a href="{% url 'homePage' %}" class="nav-link {% if pageName == 'indexHomePage' %} link-active {% endif %}">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="size-7">
             <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
           </svg>
@@ -23,41 +23,59 @@
 
       {% comment %}========== Data Teknis =========={% endcomment %}
       <li class="nav-menu group">
-        <div class="nav-link">
+        <div class="nav-link {% if pageName == 'dataTeknis' %} link-active {% endif %}">
           Data Teknis<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="size-5 ml-2">
             <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
           </svg>
         </div>
         <ul class="dropdown-menu dropdown-menu-hover">
           <li class="nav-submenu">
-            <a href="" class="nav-submenu-link">Peta D.I</a>
+            <a href="{% url 'petaDI' %}" class="nav-submenu-link">Peta D.I</a>
           </li>
-          <li class="nav-submenu group/sub">
+          <li class="nav-submenu">
+            <a href="{% url 'sumberAir' %}" class="nav-submenu-link">Sumber Air Irigasi</a>
+          </li>
+          {% comment %} <li class="nav-submenu group/sub">
             <a href="" class="nav-submenu-link sub-menu">
-              Sumber Air<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="size-5">
+              Sumber Air Irigasi<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="size-5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
               </svg>
             </a>
             <ul class="dropdown-menu dropdown-submenu-hover">
               <li class="nav-submenu">
-                <a href="" class="nav-submenu-link">Bendung</a>
+                <a href="{% url 'bendung' %}" class="nav-submenu-link">Bendung</a>
               </li>
               <li class="nav-submenu">
-                <a href="" class="nav-submenu-link">Embung</a>
+                <a href="{% url 'embung' %}" class="nav-submenu-link">Embung</a>
               </li>
               <li class="nav-submenu">
-                <a href="" class="nav-submenu-link">Ketersediaan Air</a>
+                <a href="{% url 'ketersediaanAir' %}" class="nav-submenu-link">Ketersediaan Air</a>
+              </li>
+            </ul>
+          </li> {% endcomment %}
+          <li class="nav-submenu">
+            <a href="{% url 'skema' %}" class="nav-submenu-link">Skema</a>
+          </li>
+          <li class="nav-submenu group/sub">
+            <a href="" class="nav-submenu-link sub-menu">
+              Jaringan Irigasi Utama<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="size-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+              </svg>
+            </a>
+            <ul class="dropdown-menu dropdown-submenu-hover">
+              <li class="nav-submenu">
+                <a href="{% url 'jaringanPrimer' %}" class="nav-submenu-link">Premier</a>
+              </li>
+              <li class="nav-submenu">
+                <a href="{% url 'jaringanSekunder' %}" class="nav-submenu-link">Sekunder</a>
+              </li>
+              <li class="nav-submenu">
+                <a href="{% url 'jaringanTersier' %}" class="nav-submenu-link">Tersier</a>
               </li>
             </ul>
           </li>
           <li class="nav-submenu">
-            <a href="" class="nav-submenu-link">Skema</a>
-          </li>
-          <li class="nav-submenu">
-            <a href="" class="nav-submenu-link">Jaringan Irigasi Utama</a>
-          </li>
-          <li class="nav-submenu">
-            <a href="" class="nav-submenu-link">Petugas OP</a>
+            <a href="{% url 'petugasOP' %}" class="nav-submenu-link">Petugas OP</a>
           </li>
         </ul>
       </li>
@@ -103,4 +121,81 @@
     </ul>
     <a href="" class="bg-accent-color py-1.5 px-5 font-medium rounded-lg text-lg transition-all duration-300 ease-in-out hover:bg-accent-color/75 hover:text-primary-color">Login</a>
   </div>
+
+  {% comment %}Button Menu{% endcomment %}
+  <button type="button" class="lg:hidden relative cursor-pointer w-9 h-9" id="nav-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="size-6 absolute m-auto w-max h-max transition-all duration-300 ease-in-out" id="burger-menu">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="size-6 absolute m-auto w-max h-max transition-all duration-300 ease-in-out opacity-0" id="close-menu">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+    </svg>
+  </button>
+
+  {% comment %}Mobile Menu{% endcomment %}
+  <ul class="menu-mobile lg:hidden" id="nav-menu">
+    <li class="nav-menu">
+      <a href="" class="nav-menu-link-mobile">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+        </svg>
+      </a>
+    </li>
+    <li class="nav-menu">
+      <div class="nav-menu-link-mobile sub-menu">
+        Data Teknis<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="size-5 ml-2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+        </svg>
+      </div>
+      <ul class="dropdown-menu-mobile">
+        <li>
+          <a href="" class="nav-menu-link-mobile pl-6">Peta D.I</a>
+        </li>
+        <li>
+          <div class="nav-submenu-link-mobile pl-6 sub-menu">
+            Sumber Air<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="size-5 ml-2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            </svg>
+          </div>
+          <ul class="absolute hidden">
+            <li>
+              <a href="" class="nav-menu-link-mobile pl-8">Bendung</a>
+            </li>
+            <li>
+              <a href="" class="nav-menu-link-mobile pl-8">Embung</a>
+            </li>
+            <li>
+              <a href="" class="nav-menu-link-mobile pl-8">Ketersediaan Air</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="" class="nav-menu-link-mobile pl-6">Skema</a>
+        </li>
+        <li>
+          <a href="" class="nav-menu-link-mobile pl-6">Jaringan Irigasi Utama</a>
+        </li>
+        <li>
+          <a href="" class="nav-menu-link-mobile pl-6">Petugas OP</a>
+        </li>
+      </ul>
+    </li>
+    <li class="nav-menu">
+      <div class="nav-menu-link-mobile sub-menu">
+        P3A<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="size-5 ml-2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+        </svg>
+      </div>
+    </li>
+    <li class="nav-menu">
+      <div class="nav-menu-link-mobile sub-menu">
+        Masa Tanam<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="size-5 ml-2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+        </svg>
+      </div>
+    </li>
+    <li class="nav-menu">
+      <a href="" class="nav-menu-link-mobile">Monitoring</a>
+    </li>
+  </ul>
 </nav>

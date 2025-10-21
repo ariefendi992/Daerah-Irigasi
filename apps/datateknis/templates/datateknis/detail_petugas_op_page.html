@@ -1,0 +1,43 @@
+{% extends '_base.html' %}
+{% load static %}
+{% block content %}
+  <section class="max-w-6xl w-full lg:container mx-auto mt-10">
+    {% comment %} <h3 class="text-lg text-accent-color font-bold tracking-wider text-center uppercase">Detail Data Petugas OP</h3> {% endcomment %}
+    <div class="max-w-fit mx-auto">
+      <div class="card">
+        <div class="card-body">
+          <div class="flex flex-col gap-4 justify-center items-center">
+            {% comment %}Image/Animasi{% endcomment %}
+            <div class="h-[150px] w-[150px] rounded-full overflow-hidden shadow-primary-color/40 shadow-xs border-4 border-primary-color">
+              <img src="{% static 'images/default_petugas.png' %}" class="w-full object-cover" alt="" />
+            </div>
+            {% comment %}Deskripsi{% endcomment %}
+            <div class="flex flex-col items-center">
+              <h3 class="font-semibold text-primary-color text-2xl">{{ dataPetugas.user.nama }}</h3>
+              <p class="text-sm text-gray-500 font-medium">{{ dataPetugas.jabatan }} | {{ dataPetugas.wilayah_di }}</p>
+              {% if dataPetugas.total_luas %}
+                <p class="text-gray-500 font-medium mt-2.5">Luas {{ dataPetugas.total_luas }} Ha</p>
+              {% endif %}
+              <h5 class="text-gray-500 font-medium text-base mt-2 border-t-2 border-primary-color w-full text-center pt-2.5">Wilayah Kerja</h5>
+
+              <div class="bg-secondary-color px-2 py-2 text-base text-primary-color font-medium rounded-2xl overflow-hidden mt-4 lg:max-w-xl">
+                <ul class="grid grid-cols-3 gap-x-2.5 gap-y-3.5 place-content-center items-center py-2 w-full">
+                  {% for item in bangunan %}
+                    <li class="items-center gap-1 inline-flex odd:max-w-fit">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.0" stroke="currentColor" class="size-5 bg-accent-color rounded-full text-white p-[2.5px]">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                      </svg>
+                      {{ item.nama_bangunan }} {% if item.luas %}
+                        {{ item.luas }} Ha
+                      {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

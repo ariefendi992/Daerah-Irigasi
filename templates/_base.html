@@ -1,10 +1,10 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth md:scroll-auto">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Monitoring Daerah Irigasi Oransbari</title>
+    <title>{{ titlePage }} - D.I. Oransbari</title>
 
     {% comment %}favicon{% endcomment %}
     <link rel="icon" type="image/svg+xml" href="{% static 'images/favicon.ico' %}" />
@@ -26,17 +26,20 @@
     <link rel="stylesheet" href="{% static 'css/output.css' %}" />
     <link rel="stylesheet" href="{% static 'css/custom.css' %}" />
   </head>
-  <body class="bg-body-color font-dm-sans">
-    <header id="header" class="w-full h-[80px] sticky top-0 z-20 bg-header-color border-b-4 border-accent-color font-manrope">
+  <body class="bg-body-color font-dm-sans box-border min-h-screen flex flex-col">
+    <header id="header" class="w-full h-[80px] sticky top-0 z-50 bg-header-color border-b-4 border-accent-color font-manrope">
       {% include 'layouts/navbar.html' %}
     </header>
 
-    <div class="w-full my-10">
+    <main class="w-full flex-1 z-0">
       {% comment %}Hero content{% endcomment %}
+      {% if pageName != 'indexHomePage' %}
+        {% include 'layouts/hero_no_index.html' %}
+      {% endif %}
       {% block content %}
 
       {% endblock %}
-    </div>
+    </main>
 
     <footer class="w-full mt-20 bg-primary-color py-8">
       {% include 'layouts/footer.html' %}
