@@ -2,7 +2,19 @@
 
 {% block result_list %}
   {{ block.super }}
-  {% if total_panjang %}
-    <div style="text-align:right; font-weight:bold; margin:10px 20px;">TOTAL PANJANG (M): {{ total_panjang|floatformat:2 }}</div>
+  {% if total_bwr_5 %}
+    <div style="text-align:right; font-weight:bold; margin:10px 20px;">TOTAL PANJANG WARBIADI (B.WR.5) (M): {{ total_bwr_5|floatformat:2 }}</div>
+  {% endif %}
+  {% if total_bwr_5_1 %}
+    <div style="text-align:right; font-weight:bold; margin:10px 20px;">TOTAL PANJANG WARBIADI (B.WR.5.1) (M): {{ total_bwr_5_1|floatformat:2 }}</div>
+  {% endif %}
+  {% if total_bsj %}
+    <div style="text-align:right; font-weight:bold; margin:10px 20px;">TOTAL PANJANG SINDANG JAYA (B.SJ) (M): {{ total_bsj|floatformat:2 }}</div>
+  {% endif %}
+  {% if total_bm %}
+    <div style="text-align:right; font-weight:bold; margin:10px 20px;">TOTAL PANJANG MARGOMULYO (B.M) (M): {{ total_bm|floatformat:2 }}</div>
+  {% endif %}
+  {% if total_bor %}
+    <div style="text-align:right; font-weight:bold; margin:10px 20px;">TOTAL PANJANG ORANSBARI (B.OR) (M): {{ total_bor|floatformat:2 }}</div>
   {% endif %}
 {% endblock %}

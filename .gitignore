@@ -6,7 +6,3 @@ node_modules/
 *migrations/
 testing.py
 .ex/
-<<<<<<< HEAD
-=======
-.custom.
->>>>>>> 436ad8154b5893caf79ce5beb93300515a6bbd75

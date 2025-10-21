@@ -1,0 +1,198 @@
+{% extends '_base.html' %}
+
+{% block content %}
+  {% comment %}========= Sekunder W.BR.5 ========={% endcomment %}
+  <section class="max-w-6xl w-full lg:container mx-auto">
+    <h3 class="text-lg text-accent-color font-bold tracking-wider text-center uppercase">Data Jaringan WARBIADI (B.WR.5)</h3>
+
+    <div class="px-4 lg:px-0 mt-7 rounded-md overflow-hidden w-full lg:max-w-6xl mx-auto">
+      <div class="relative overflow-x-auto">
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500">
+          <thead class="text-sm text-gray-700 uppercase bg-gray-400 text-center">
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col" class="text-left">Nama Bangunan</th>
+              <th scope="col">Saluran/Ruas</th>
+              <th scope="col">Panjang Saluran (M)</th>
+              <th scope="col">Tahun Pembuatan/Rehap</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in ruasBWR5 %}
+              <tr>
+                <td>{{ forloop.counter }}</td>
+                <td class="text-left">
+                  {{ item.bangunan_1 }} <br /> {{ item.bangunan_2 }}
+                </td>
+                <td>{{ item.saluran }} ({{ item.bangunan_1.kode }} - {{ item.bangunan_2.kode }})</td>
+                <td>{{ item.panjang_saluran }}</td>
+                <td>{{ item.th_pembuatan }}</td>
+              </tr>
+            {% endfor %}
+            <tr class="text-sm text-primary-color bg-gray-400/50">
+              <td colspan="3" class="font-semibold">Total Panjang (M)</td>
+              <td class="font-semibold">{{ totalPanjangBWR5 }}</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  {% comment %}========= Sekunder W.BR.5.1 ========={% endcomment %}
+  <section class="max-w-6xl w-full lg:container mx-auto mt-10">
+    <h3 class="text-lg text-accent-color font-bold tracking-wider text-center uppercase">Data Jaringan WARBIADI (B.WR.5.1)</h3>
+
+    <div class="px-4 lg:px-0 mt-7 rounded-md overflow-hidden w-full lg:max-w-6xl mx-auto">
+      <div class="relative overflow-x-auto">
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500">
+          <thead class="text-sm text-gray-700 uppercase bg-gray-400 text-center">
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col" class="text-left">Nama Bangunan</th>
+              <th scope="col">Saluran/Ruas</th>
+              <th scope="col">Panjang Saluran (M)</th>
+              <th scope="col">Tahun Pembuatan/Rehap</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in ruasBWR51 %}
+              <tr>
+                <td>{{ forloop.counter }}</td>
+                <td class="text-left">
+                  {{ item.bangunan_1 }} <br /> {{ item.bangunan_2 }}
+                </td>
+                <td>{{ item.saluran }} ({{ item.bangunan_1.kode }} - {{ item.bangunan_2.kode }})</td>
+                <td>{{ item.panjang_saluran }}</td>
+                <td>{{ item.th_pembuatan }}</td>
+              </tr>
+            {% endfor %}
+            <tr class="text-sm text-primary-color bg-gray-400/50">
+              <td colspan="3" class="font-semibold">Total Panjang (M)</td>
+              <td class="font-semibold">{{ totalPanjangBWR51 }}</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  {% comment %}========= Sekunder BSJ ========={% endcomment %}
+  <section class="max-w-6xl w-full lg:container mx-auto mt-10">
+    <h3 class="text-lg text-accent-color font-bold tracking-wider text-center uppercase">Data Jaringan Sindang Jaya (B.SJ)</h3>
+
+    <div class="px-4 lg:px-0 mt-7 rounded-md overflow-hidden w-full lg:max-w-6xl mx-auto">
+      <div class="relative overflow-x-auto">
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500">
+          <thead class="text-sm text-gray-700 uppercase bg-gray-400 text-center">
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col" class="text-left">Nama Bangunan</th>
+              <th scope="col">Saluran/Ruas</th>
+              <th scope="col">Panjang Saluran (M)</th>
+              <th scope="col">Tahun Pembuatan/Rehap</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in ruasBSJ %}
+              <tr>
+                <td>{{ forloop.counter }}</td>
+                <td class="text-left">
+                  {{ item.bangunan_1 }} <br /> {{ item.bangunan_2 }}
+                </td>
+                <td>{{ item.saluran }} ({{ item.bangunan_1.kode }} - {{ item.bangunan_2.kode }})</td>
+                <td>{{ item.panjang_saluran }}</td>
+                <td>{{ item.th_pembuatan }}</td>
+              </tr>
+            {% endfor %}
+            <tr class="text-sm text-primary-color bg-gray-400/50">
+              <td colspan="3" class="font-semibold">Total Panjang (M)</td>
+              <td class="font-semibold">{{ totalPanjangBSJ }}</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  {% comment %}========= Sekunder B.M ========={% endcomment %}
+  <section class="max-w-6xl w-full lg:container mx-auto mt-10">
+    <h3 class="text-lg text-accent-color font-bold tracking-wider text-center uppercase">Data Jaringan Margomulyo (B.M)</h3>
+
+    <div class="px-4 lg:px-0 mt-7 rounded-md overflow-hidden w-full lg:max-w-6xl mx-auto">
+      <div class="relative overflow-x-auto">
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500">
+          <thead class="text-sm text-gray-700 uppercase bg-gray-400 text-center">
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col" class="text-left">Nama Bangunan</th>
+              <th scope="col">Saluran/Ruas</th>
+              <th scope="col">Panjang Saluran (M)</th>
+              <th scope="col">Tahun Pembuatan/Rehap</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in ruasBM %}
+              <tr>
+                <td>{{ forloop.counter }}</td>
+                <td class="text-left">
+                  {{ item.bangunan_1 }} <br /> {{ item.bangunan_2 }}
+                </td>
+                <td>{{ item.saluran }} ({{ item.bangunan_1.kode }} - {{ item.bangunan_2.kode }})</td>
+                <td>{{ item.panjang_saluran }}</td>
+                <td>{{ item.th_pembuatan }}</td>
+              </tr>
+            {% endfor %}
+            <tr class="text-sm text-primary-color bg-gray-400/50">
+              <td colspan="3" class="font-semibold">Total Panjang (M)</td>
+              <td class="font-semibold">{{ totalPanjangBM }}</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  {% comment %}========= Sekunder B.OR ========={% endcomment %}
+  <section class="max-w-6xl w-full lg:container mx-auto mt-10">
+    <h3 class="text-lg text-accent-color font-bold tracking-wider text-center uppercase">Data Jaringan Oransabari (B.OR)</h3>
+
+    <div class="px-4 lg:px-0 mt-7 rounded-md overflow-hidden w-full lg:max-w-6xl mx-auto">
+      <div class="relative overflow-x-auto">
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500">
+          <thead class="text-sm text-gray-700 uppercase bg-gray-400 text-center">
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col" class="text-left">Nama Bangunan</th>
+              <th scope="col">Saluran/Ruas</th>
+              <th scope="col">Panjang Saluran (M)</th>
+              <th scope="col">Tahun Pembuatan/Rehap</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in ruasBOR %}
+              <tr>
+                <td>{{ forloop.counter }}</td>
+                <td class="text-left">
+                  {{ item.bangunan_1 }} <br /> {{ item.bangunan_2 }}
+                </td>
+                <td>{{ item.saluran }} ({{ item.bangunan_1.kode }} - {{ item.bangunan_2.kode }})</td>
+                <td>{{ item.panjang_saluran }}</td>
+                <td>{{ item.th_pembuatan }}</td>
+              </tr>
+            {% endfor %}
+            <tr class="text-sm text-primary-color bg-gray-400/50">
+              <td colspan="3" class="font-semibold">Total Panjang (M)</td>
+              <td class="font-semibold">{{ totalPanjangBOR }}</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% load static %}
+<div class="container w-full mx-auto h-[160px] lg:my-10 relative">
+  <div class="w-full h-full shadow-md lg:rounded-[40px] lg:overflow-hidden">
+    <img src="{% static 'images/gambar_3.jpg' %}" class="w-full h-full object-cover" alt="slide1" />
+    <div class="absolute inset-0 bg-gradient-to-b from-primary-color/50 to-primary-color/25 h-full lg:rounded-[40px] lg:overflow-hidden w-full flex items-center justify-center text-accent-color font-manrope">
+      <div class="flex flex-col items-center justify-center">
+        <h2 class="uppercase font-extrabold text-lg text-shadow-2xs tracking-wide">{{ heroTitle }}</h2>
+        {% if heroSubtitle %}
+          <h2 class="uppercase font-extrabold text-xl text-shadow-2xs tracking-wide text-white">{{ heroSubtitle }}</h2>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

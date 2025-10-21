@@ -16,6 +16,21 @@
   p {
     @apply text-base;
   }
+
+  table {
+    @apply w-full text-sm text-left rtl:text-right text-gray-500;
+  }
+  thead {
+    @apply text-sm;
+  }
+
+  th,
+  td {
+    @apply px-6 py-2 text-center whitespace-nowrap;
+  }
+  tbody > tr {
+    @apply border-b border-gray-200 odd:bg-white even:bg-gray-100;
+  }
 }
 
 @layer components {
@@ -41,7 +56,7 @@
 
   /* jika halaman aktif maka ini akan di implementasikan */
   .link-active {
-    @apply lg:text-accent-color font-bold text-primary-color;
+    @apply lg:text-accent-color;
   }
 
   /* berada pada elemen li pada menu utama di luar dropdown */
@@ -66,7 +81,7 @@
 
   /* card drowdown menu hover*/
   .dropdown-menu {
-    @apply invisible opacity-0 scale-y-75 origin-top p-0 m-0 w-[250px] rounded-2xl absolute left-0 top-full  bg-accent-color transition-all duration-300 ease-in-out text-left block;
+    @apply invisible opacity-0 scale-y-75 origin-top p-0 m-0 w-[250px] rounded-2xl absolute left-0 top-full  bg-accent-color transition-all duration-300 ease-in-out text-left block z-50;
   }
 
   /* dropdown menu hover berada pada sub menu  level 1 */
@@ -79,7 +94,28 @@
     @apply ml-1.5 top-0 left-full group-hover/sub:opacity-100 group-hover/sub:scale-y-100 group-hover/sub:visible group-hover/sub:py-1;
   }
 
+  /* untuk submenu dopdown yang ada icon */
   .sub-menu {
     @apply flex justify-between items-center;
+  }
+
+  /* dropdown menu mobile */
+  .menu-mobile {
+    @apply absolute invisible top-[80px] bg-accent-color left-0 w-full font-manrope font-medium py-1.5 origin-top scale-y-75 opacity-0 transition-all duration-300 z-50;
+  }
+
+  .nav-menu-link-mobile {
+    @apply flex px-4 py-2.5 justify-between cursor-pointer transition-all duration-300 ease-in-out;
+  }
+  .nav-submenu-link-mobile {
+    @apply flex px-4 py-2.5 justify-between cursor-pointer;
+  }
+
+  .dropdown-menu-mobile {
+    @apply absolute invisible origin-top opacity-0  scale-y-75;
+  }
+
+  .menu-open {
+    @apply relative visible block opacity-100 scale-y-100 transition-all ease-in-out duration-300;
   }
 }

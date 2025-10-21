@@ -1,0 +1,41 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block content %}
+  <section class="mx-auto my-10 w-full md:container md:px-4 lg:max-w-6xl">
+    <h3 class="text-lg text-accent-color font-bold tracking-wider text-center uppercase">Data Embung</h3>
+    <div class="md:w-full mt-7 md:grid md:justify-center">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-8 gap-x-6 px-4 lg:px-0">
+        {% for item in data %}
+          <div class="card w-full rounded-2xl h-[190px] lg:max-w-[300px] cursor-pointer">
+            <div class="card-body w-full h-full p-0 relative">
+              <div class="w-full h-full lg:max-h-[250px]">
+                <img src="{% if item.file_foto %}
+                    {{ item.file_foto.url }}
+                  {% else %}
+                    {% static 'images/embung1.png' %}
+                  {% endif %}"
+                  class="w-full h-full object-cover"
+                  alt="" />
+              </div>
+
+              <div class="absolute w-full h-full inset-0 bg-linear-to-t from-primary-color/70 to-primary-color/10">
+                <div class="flex flex-col items-start h-full w-full justify-end py-8 px-4 text-gray-300 font-semibold">
+                  <h3 class="text-accent-color text-lg lg:text-xl">{{ item.nama_embung }}</h3>
+                  <p class="text-[14px] lg:text-base flex gap-1.5 items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 lg:size-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                    </svg>
+
+                    {{ item.lokasi }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endblock %}
