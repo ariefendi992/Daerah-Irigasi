@@ -20,7 +20,7 @@
 
 ### Menu P3A
 
-- [ ] Daftar P3A
-- [ ] Wilayah Kerja P3A
+- [x] Daftar P3A
+- [x] Wilayah Kerja P3A
 
 ### Ubah kembali ke char pada bangunanOP
