@@ -29,7 +29,7 @@
     @apply px-6 py-2 text-center whitespace-nowrap;
   }
   tbody > tr {
-    @apply border-b border-gray-200 odd:bg-white even:bg-gray-100;
+    @apply border-b border-gray-200 odd:bg-white even:bg-gray-200;
   }
 }
 

@@ -82,19 +82,19 @@
 
       {% comment %}========== Data P3A =========={% endcomment %}
       <li class="nav-menu group">
-        <div class="nav-link">
-          P3A<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="size-5 ml-2">
+        <a href="{% url 'daftarP3A' %}" class="nav-link {% if pageName == 'p3a' %} link-active {% endif %}">
+          P3A{% comment %} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="size-5 ml-2">
             <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-          </svg>
-        </div>
-        <ul class="dropdown-menu dropdown-menu-hover">
+          </svg> {% endcomment %}
+        </a>
+        {% comment %} <ul class="dropdown-menu dropdown-menu-hover">
           <li class="nav-submenu">
             <a href="" class="nav-submenu-link">Daftar P3A</a>
           </li>
           <li class="nav-submenu">
             <a href="" class="nav-submenu-link">Wilayah Kerja</a>
           </li>
-        </ul>
+        </ul> {% endcomment %}
       </li>
 
       {% comment %}========== Data Masa Tanam =========={% endcomment %}

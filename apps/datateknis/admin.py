@@ -183,8 +183,12 @@ class JenisJaringanAdmin(admin.ModelAdmin):
 
 @admin.register(BangunanModel)
 class BangunanAdmin(admin.ModelAdmin):
-    def get_model_perms(self, request):
-        return {}
+
+    list_display = ["jaringan_id", "kode", "nama_bangunan"]
+    ordering = ["kode"]
+    # def get_model_perms(self, request):
+    #     return {}
+    ...
 
 
 @admin.register(JaringanPrimerModel)

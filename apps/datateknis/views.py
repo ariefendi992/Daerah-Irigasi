@@ -224,7 +224,6 @@ def detail_petugas_op_view(request, petugas_id):
 
     data_petugas = PetugasOPModel.objects.filter(pk=petugas_id).first()
     bangunan = data_petugas.bangunan.all()
-    print(f"Data Bangunan => {bangunan}")
     context = {
         "pageName": "dataTeknis",
         "titlePage": "Petugas OP",

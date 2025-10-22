@@ -1,11 +1,29 @@
 from django.db import models
+from apps.masterdata.models import DaerahIrigasiModel
 
 
 # Create your models here.
+class PembagianWilayahKerjaModel(models.Model):
+    # nama_wilayah = models.CharField("Wilayah", max_length=150)
+    wilayah = models.ForeignKey(
+        DaerahIrigasiModel, on_delete=models.SET_NULL, blank=True, null=True
+    )
+    luas = models.DecimalField(
+        "Luas (Ha)", max_digits=10, decimal_places=2, blank=True, null=True
+    )
+
+    class Meta:
+        verbose_name = "Pambagian Wilayah Kerja"
+        verbose_name_plural = "Data Wilayah Kera"
+
+    def __str__(self):
+        return self.wilayah.nama_irigasi
+
+
 class PetakTersierModel(models.Model):
     """Detail Petak Tersier per P3A"""
 
-    nama_petak = models.CharField("Nama Petak", max_length=100)
+    nama_petak = models.CharField("Nama Petak", max_length=100, default="Petak")
     nomenklatur = models.CharField("Nomenklatur", max_length=100, null=True, blank=True)
     luas = models.DecimalField(
         "Luas (Ha)", max_digits=10, decimal_places=2, null=True, blank=True
@@ -21,6 +39,9 @@ class PetakTersierModel(models.Model):
 class P3AModel(models.Model):
     """Data utama P3A/GP3A/IP3A"""
 
+    wilayah_kera = models.ForeignKey(
+        PembagianWilayahKerjaModel, on_delete=models.CASCADE, null=True, blank=True
+    )
     nama_p3a = models.CharField("Nama P3A/GP3A/IP3A", max_length=150)
     desa = models.CharField("Desa", max_length=100)
     kecamatan = models.CharField("Kecamatan", max_length=100)
@@ -29,7 +50,7 @@ class P3AModel(models.Model):
         "Luas Area Fungsional (Ha)", max_digits=10, decimal_places=2
     )
     bangunan_pengambilan = models.CharField(
-        "Bangunan Pengambilan", max_length=150, null=True, blank=True
+        "Bangunan Pengambilan", max_length=200, null=True, blank=True
     )
     # petak_tersier = models.ManyToManyField(
     #     PetakTersierModel,
@@ -41,9 +62,9 @@ class P3AModel(models.Model):
     akta_notaris = models.CharField(
         "Akta Notaris", max_length=150, null=True, blank=True
     )
-    th_legalitas = models.CharField(
-        "Tahun Legalitas", max_length=10, null=True, blank=True
-    )
+    # th_legalitas = models.CharField(
+    #     "Tahun Legalitas", max_length=10, null=True, blank=True
+    # )
 
     class Meta:
         verbose_name_plural = "Data Wilayah Kerja P3A/GP3A/IP3A"
@@ -56,7 +77,7 @@ class P3AModel(models.Model):
         """Menjumlahkan luas semua petak tersier terkait"""
         total = self.petak_tersier.aggregate(models.Sum("luas"))["luas__sum"]
 
-        return total or 0
+        return f"{total:.2f}" or 0
 
 
 # Relasi One-to-Many: Petak tersier milik satu P3A
