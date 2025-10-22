@@ -3,6 +3,12 @@ from .models import *
 
 
 # Register your models here.
+@admin.register(PembagianWilayahKerjaModel)
+class PembagianWilayahKerjaAdmin(admin.ModelAdmin):
+    def get_model_perms(self, request):
+        return {}
+
+
 class PetakTersierInline(admin.TabularInline):
     model = PetakTersierModel
     extra = 1

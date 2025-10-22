@@ -1,0 +1,122 @@
+{% extends '_base.html' %}
+
+{% block content %}
+  <section class="max-w-6xl px-4 md:px-0 lg:container mx-auto">
+    <div class="card w-full mt-10">
+      <div class="card-body p-0">
+        <div class="relative overflow-x-auto">
+          <table>
+            <thead class="text-[10px] md:text-xs text-gray-700 uppercase bg-gray-400">
+              <tr class="">
+                <th rowspan="2" class="border border-white w-5">No.</th>
+                <th rowspan="2" class="border border-white w-24">Nama P3A</th>
+                <th colspan="3" class="border border-white">Lokasi</th>
+                <th rowspan="2" class="border border-white text-wrap">Luas Area Fungsional (Ha)</th>
+                <th rowspan="2" class="border border-white text-wrap">Bangunan Pengambilan</th>
+                <th colspan="2" class="border border-white">Petak tersier</th>
+                <th colspan="2" class="border border-white">Legalitas IP3A/GP3A/P3A</th>
+              </tr>
+              <tr>
+                <th class="border border-white">Desa</th>
+                <th class="border border-white">Kecamatan</th>
+                <th class="border border-white">Kabupaten</th>
+                <th class="border border-white">Nomenklatur</th>
+                <th class="border border-white">Luas (Ha)</th>
+                <th class="border border-white">SK Bupati</th>
+                <th class="border border-white">AKta Notaris</th>
+              </tr>
+            </thead>
+            <tbody class="text-xs md:text-sm">
+              {% for item in dataP3A %}
+                <tr>
+                  <td>{{ forloop.counter }}</td>
+                  <td>{{ item.nama_p3a }}</td>
+                  <td>{{ item.desa }}</td>
+                  <td>{{ item.kecamatan }}</td>
+                  <td>{{ item.kabupaten }}</td>
+                  <td>{{ item.luas_area_fungsional }}</td>
+                  <td>{{ item.bangunan_pengambilan }}</td>
+                  <td class="text-left">
+                    <ul class="list-disc">
+                      {% for x in item.petak_tersier.all %}
+                        <li>{{ x.nama_petak }} {{ x.nomenklatur }}</li>
+                      {% endfor %}
+                    </ul>
+                  </td>
+                  <td class="text-left">
+                    <ul class="list-disc">
+                      {% for x in item.petak_tersier.all %}
+                        <li>{{ x.luas }}</li>
+                      {% endfor %}
+                    </ul>
+                  </td>
+                  <td>{{ item.sk_bupati }}</td>
+                  <td>{{ item.akta_notaris }}</td>
+                </tr>
+
+                {% comment %}====> Jika tidak ada data{% endcomment %}
+              {% empty %}
+                <tr>
+                  <td colspan="7" class="text-center py-4 text-gray-500">Tidak ada data</td>
+                </tr>
+              {% endfor %}
+              {% comment %} <tr>
+                <td>1</td>
+                <td>P3A Tirta Arum</td>
+                <td>Sindang Jaya</td>
+                <td>Oransbari</td>
+                <td>Manokwari Selatan</td>
+                <td>15.93</td>
+                <td>B.OR.5 & B.OR.6</td>
+                <td>
+                  <ul class="list-disc">
+                    <li>Petak B.OR.5.Ka</li>
+                    <li>Petak B.OR.5.Ka</li>
+                    <li>Petak B.OR.5.Ka</li>
+                    <li>Petak B.OR.5.Ka</li>
+                  </ul>
+                </td>
+                <td>8.15</td>
+                <td>82A Tahun 2008</td>
+                <td>44, Tgl 31 Agustus 2017</td>
+              </tr> {% endcomment %}
+            </tbody>
+          </table>
+        </div>
+
+        {% comment %}===>> pagination{% endcomment %}
+        <!-- Pagination -->
+        <div class="flex flex-col gap-y-2 md:flex-row items-center justify-between mt-4 px-4 pb-4">
+          <div class="text-xs md:text-sm text-gray-600">Showing {{ page_obj.number }} to {{ page_obj.paginator.num_pages }}</div>
+
+          <nav aria-label="Page navigation example">
+            <ul class="inline-flex -space-x-px text-sm">
+              {% if page_obj.has_previous %}
+                <li>
+                  <a href="?page={{ page_obj.previous_page_number }}" class="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 text-xs md:text-sm bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700">Previous</a>
+                </li>
+              {% else %}
+                <li>
+                  <a href="#" class="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 text-xs md:text-sm bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700">Previous</a>
+                </li>
+              {% endif %}
+              <li>
+                <a href="#" aria-current="page" class="flex items-center justify-center px-3 h-8 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700">{{ page_obj.number }}</a>
+              </li>
+
+              {% if page_obj.has_next %}
+                <li>
+                  <a href="?page={{ page_obj.next_page_number }}" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 text-xs md:text-sm bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700">Next</a>
+                </li>
+              {% else %}
+                <li>
+                  <a href="" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 text-xs md:text-sm bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700">Next</a>
+                </li>
+              {% endif %}
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
