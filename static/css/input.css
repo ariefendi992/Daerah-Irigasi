@@ -35,7 +35,7 @@
 
 @layer components {
   .card {
-    @apply bg-white  rounded-lg overflow-hidden shadow-lg outline-1 outline-gray-200;
+    @apply bg-white  rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300 outline-1 outline-gray-200;
   }
 
   .card-header {

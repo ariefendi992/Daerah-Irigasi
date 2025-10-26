@@ -14,8 +14,8 @@ class PengembanganDaerahIrigasiAdmin(admin.ModelAdmin):
     list_display = [
         "daerah_irigasi_id",
         "jenis_peta_id",
-        "sumber_data",
-        "keterangan",
+        # "sumber_data",
+        # "keterangan",
         "tgl_upload",
         "file_peta",
     ]
@@ -27,8 +27,8 @@ class PengembanganDaerahIrigasiAdmin(admin.ModelAdmin):
                 "fields": (
                     "daerah_irigasi_id",
                     "jenis_peta_id",
-                    "sumber_data",
-                    "keterangan",
+                    # "sumber_data",
+                    # "keterangan",
                 )
             },
         ),

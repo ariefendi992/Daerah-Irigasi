@@ -28,6 +28,12 @@ urlpatterns = [
     path("", include("apps.monitoring.urls"), name="monitoringPage"),
     path("data-tenik/", include("apps.datateknis.urls"), name="dataTeknisPage"),
     path("p3a/", include("apps.p3a.urls"), name="dataP3APage"),
+    path("masa-tanam/", include("apps.masatanam.urls"), name="dataMasaTanamPage"),
+    path(
+        "pengembangan-DI/",
+        include("apps.pengembangandi.urls"),
+        name="dataPengembanganDI",
+    ),
 ]
 
 

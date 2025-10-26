@@ -68,13 +68,13 @@ class RealisasiLuasTanamModel(models.Model):
         "Luas Potensial (Ha)", max_digits=10, decimal_places=2, null=True, blank=True
     )
     mt1 = models.DecimalField(
-        "MT I (Ha)", max_digits=10, decimal_places=2, null=True, blank=True
+        "MT I (Ha)", max_digits=10, decimal_places=2, null=True, blank=True, default=0
     )
     mt2 = models.DecimalField(
-        "MT II (Ha)", max_digits=10, decimal_places=2, null=True, blank=True
+        "MT II (Ha)", max_digits=10, decimal_places=2, null=True, blank=True, default=0
     )
     mt3 = models.DecimalField(
-        "MT III (Ha)", max_digits=10, decimal_places=2, null=True, blank=True
+        "MT III (Ha)", max_digits=10, decimal_places=2, null=True, blank=True, default=0
     )
     area_tanam = models.DecimalField(
         "Total Area Tanam (Ha)", max_digits=10, decimal_places=2, blank=True, null=True
@@ -100,8 +100,8 @@ class RealisasiLuasTanamModel(models.Model):
         blank=True,
         null=True,
     )
-    sumber_data = models.CharField("Sumber Data", max_length=150, null=True, blank=True)
-    link_sumber = models.URLField("Link Sumber", max_length=300, blank=True, null=True)
+    # sumber_data = models.CharField("Sumber Data", max_length=150, null=True, blank=True)
+    # link_sumber = models.URLField("Link Sumber", max_length=300, blank=True, null=True)
 
     class Meta:
         verbose_name = "Realisasi Luas Tanam"

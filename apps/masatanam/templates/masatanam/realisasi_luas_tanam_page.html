@@ -1,0 +1,217 @@
+{% extends '_base.html' %}
+{% load static %}
+{% block content %}
+  <section class="max-w-6xl md:container mx-auto mt-4">
+    {% comment %} <h3 class="text-lg text-accent-color font-bold tracking-wider text-center uppercase">Realisasi Luas Tanam</h3> {% endcomment %}
+    {% if realisasi %}
+      {% if realisasi|length < 3 %}
+        <div class="flex flex-wrap items-center justify-center w-full mt-4 px-4 md:px-0">
+          {% for item in realisasi %}
+            <div class="card w-full max-w-md">
+              <div class="card-header border-b-2 border-gray-500 px-0 py-2.5">
+                <h3 class="card-title text-lg flex justify-between px-4">Data Tahun <span class="text-blue-500">{{ item.th }}</span></h3>
+              </div>
+              <div class="card-body px-0 space-y-2.5 py-3">
+                <div class="flex justify-between font-medium px-4">
+                  <span class="text-gray-600 text-sm">Luas Potensial</span>
+                  <span class="text-gray-700 text-sm">{{ item.luas_potensial }} Ha</span>
+                </div>
+                <div class="flex justify-between font-medium px-4">
+                  <span class="text-gray-600 text-sm">MT I</span>
+                  <span class="text-gray-700 text-sm">{{ item.mt1 }} Ha</span>
+                </div>
+                <div class="flex justify-between font-medium px-4">
+                  <span class="text-gray-600 text-sm">MT II</span>
+                  <span class="text-gray-700 text-sm">{{ item.mt2|default:'-' }} Ha</span>
+                </div>
+                <div class="flex justify-between font-medium px-4">
+                  <span class="text-gray-600 text-sm">MT III</span>
+                  <span class="text-gray-700 text-sm">{{ item.mt3|default:'-' }} {% if item.mt3 != 0 %}Ha{% endif %}</span>
+                </div>
+                <div class="flex justify-between font-medium px-4">
+                  <span class="text-gray-600 text-sm">Area Tanam</span>
+                  <span class="text-gray-700 text-sm">{{ item.area_tanam }} Ha</span>
+                </div>
+                <div class="flex justify-between font-medium px-4">
+                  <span class="text-gray-600 text-sm">Indeks Pertanaman Maks</span>
+                  <span class="text-gray-700 text-sm">{{ item.ip_maks }} %</span>
+                </div>
+                <div class="flex justify-between font-medium px-4">
+                  <span class="text-gray-600 text-sm">Indeks Pertanaman Yang Ada</span>
+                  <span class="text-gray-700 text-sm">{{ item.ip_ada }} %</span>
+                </div>
+                <div class="flex justify-between font-medium px-4">
+                  <span class="text-gray-600 text-sm">Presentase Realisasi Luas Tanam</span>
+                  <span class="text-gray-700 text-sm">{{ item.persen_realisasi }} %</span>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        {% comment %}=====> Jika Data Lebih Dari Satu{% endcomment %}
+        <div class="grid md:grid-cols-2 lg: grid-cols-3 items-center justify-center w-full mt-4 px-4 md:px-0 gap-6">
+          {% for item in realisasi %}
+            <div class="card w-full max-w-md">
+              <div class="card-header border-b-2 border-gray-500 px-0 py-2.5">
+                <h3 class="card-title text-lg flex justify-between px-4">Data Tahun <span class="text-blue-500">{{ item.th }}</span></h3>
+              </div>
+              <div class="card-body px-0 space-y-2.5 py-3">
+                <div class="flex justify-between font-medium px-4">
+                  <span class="text-gray-600 text-sm">Luas Potensial</span>
+                  <span class="text-gray-700 text-sm">{{ item.luas_potensial }} Ha</span>
+                </div>
+                <div class="flex justify-between font-medium px-4">
+                  <span class="text-gray-600 text-sm">MT I</span>
+                  <span class="text-gray-700 text-sm">{{ item.mt1 }} Ha</span>
+                </div>
+                <div class="flex justify-between font-medium px-4">
+                  <span class="text-gray-600 text-sm">MT II</span>
+                  <span class="text-gray-700 text-sm">{{ item.mt2|default:'-' }} Ha</span>
+                </div>
+                <div class="flex justify-between font-medium px-4">
+                  <span class="text-gray-600 text-sm">MT III</span>
+                  <span class="text-gray-700 text-sm">{{ item.mt3|default:'-' }} {% if item.mt3 != 0 %}Ha{% endif %}</span>
+                </div>
+                <div class="flex justify-between font-medium px-4">
+                  <span class="text-gray-600 text-sm">Area Tanam</span>
+                  <span class="text-gray-700 text-sm">{{ item.area_tanam }} Ha</span>
+                </div>
+                <div class="flex justify-between font-medium px-4">
+                  <span class="text-gray-600 text-sm">Indeks Pertanaman Maks</span>
+                  <span class="text-gray-700 text-sm">{{ item.ip_maks }} %</span>
+                </div>
+                <div class="flex justify-between font-medium px-4">
+                  <span class="text-gray-600 text-sm">Indeks Pertanaman Yang Ada</span>
+                  <span class="text-gray-700 text-sm">{{ item.ip_ada }} %</span>
+                </div>
+                <div class="flex justify-between font-medium px-4">
+                  <span class="text-gray-600 text-sm">Presentase Realisasi Luas Tanam</span>
+                  <span class="text-gray-700 text-sm">{{ item.persen_realisasi }} %</span>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% else %}
+      <p class="col-span-3 text-center text-gray-500 py-10">Belum ada data</p>
+    {% endif %}
+
+    {% comment %} <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+      {% for item in realisasi %}
+        <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition duration-300">
+          <div class="p-5 border-b">
+            <h2 class="text-lg font-semibold text-green-700">Tahun {{ item.th }}</h2>
+            <p class="text-sm text-gray-500">Sumber: {{ item.sumber_data|default:'-' }}</p>
+          </div>
+
+          <div class="p-5 space-y-2">
+            <div class="flex justify-between">
+              <span class="text-gray-600 text-sm">Luas Potensial</span>
+              <span class="font-semibold text-gray-700">{{ item.luas_potensial }} Ha</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600 text-sm">MT I / II / III</span>
+              <span class="font-semibold text-green-600">{{ item.mt1 }} / {{ item.mt2 }} / {{ item.mt3 }}</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600 text-sm">Total Area Tanam</span>
+              <span class="font-semibold text-blue-600">{{ item.area_tanam }} Ha</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600 text-sm">IP Ada / Maks</span>
+              <span class="font-semibold text-orange-600">{{ item.ip_ada }} / {{ item.ip_maks }} %</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600 text-sm">Realisasi</span>
+              <span class="font-semibold text-purple-600">{{ item.persen_realisasi }} %</span>
+            </div>
+          </div>
+
+          <div class="border-t p-4 flex justify-between items-center">
+            <a href="{{ item.link_sumber }}" target="_blank" class="text-sm text-blue-600 hover:text-blue-800">Lihat Sumber →</a>
+          </div>
+        </div>
+      {% empty %}
+        <p class="col-span-3 text-center text-gray-500 py-10">Belum ada data realisasi luas tanam.</p>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="ax-w-6xl md:container mx-auto mt-10">
+    <h3 class="text-lg text-accent-color font-bold tracking-wider text-center uppercase">Realisasi Luas Tanam</h3>
+
+    {% if produktivitas|length == 1 %}
+      <!-- Jika hanya 1 data -->
+      <div class="flex justify-center items-center">
+        {% for item in produktivitas %}
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition duration-300 w-full max-w-md">
+            <div class="p-5 border-b">
+              <h2 class="text-lg font-semibold text-green-700">{{ item.wilayah|default:'Nasional' }}</h2>
+              <p class="text-sm text-gray-500">Tahun: {{ item.th }}</p>
+              <p class="text-xs text-gray-400 italic">{{ item.get_tingkat_data_display }}</p>
+            </div>
+
+            <div class="p-5 space-y-2">
+              <div class="flex justify-between">
+                <span class="text-gray-600 text-sm">Produktivitas Daerah</span>
+                <span class="font-semibold text-green-600">{{ item.produktivitas_daerah }} Ton/Ha</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600 text-sm">Rata-rata Nasional</span>
+                <span class="font-semibold text-gray-700">{{ item.produktivitas_rata_nasional }} Ton/Ha</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600 text-sm">Presentase</span>
+                <span class="font-semibold text-blue-600">{{ item.presentase }}%</span>
+              </div>
+            </div>
+
+            <div class="border-t p-4 flex justify-between items-center">
+              <a href="{{ item.link_sumber }}" target="_blank" class="text-sm text-blue-600 hover:text-blue-800">Lihat Sumber →</a>
+              <span class="text-xs text-gray-400">{{ item.sumber_data }}</span>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <!-- Jika data lebih dari 1 -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {% for item in produktivitas %}
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition duration-300">
+            <div class="p-5 border-b">
+              <h2 class="text-lg font-semibold text-green-700">{{ item.wilayah|default:'Nasional' }}</h2>
+              <p class="text-sm text-gray-500">Tahun: {{ item.th }}</p>
+              <p class="text-xs text-gray-400 italic">{{ item.get_tingkat_data_display }}</p>
+            </div>
+
+            <div class="p-5 space-y-2">
+              <div class="flex justify-between">
+                <span class="text-gray-600 text-sm">Produktivitas Daerah</span>
+                <span class="font-semibold text-green-600">{{ item.produktivitas_daerah }} Ton/Ha</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600 text-sm">Rata-rata Nasional</span>
+                <span class="font-semibold text-gray-700">{{ item.produktivitas_rata_nasional }} Ton/Ha</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600 text-sm">Presentase</span>
+                <span class="font-semibold text-blue-600">{{ item.presentase }}%</span>
+              </div>
+            </div>
+
+            <div class="border-t p-4 flex justify-between items-center">
+              <a href="{{ item.link_sumber }}" target="_blank" class="text-sm text-blue-600 hover:text-blue-800">Lihat Sumber →</a>
+              <span class="text-xs text-gray-400">{{ item.sumber_data }}</span>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if produktivitas|length == 0 %}
+      <p class="text-center text-gray-500 py-10">Belum ada data produktivitas.</p>
+    {% endif %}
+  </section> {% endcomment %}
+{% endblock %}

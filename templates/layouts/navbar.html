@@ -99,25 +99,28 @@
 
       {% comment %}========== Data Masa Tanam =========={% endcomment %}
       <li class="nav-menu group">
-        <div class="nav-link">
+        <div class="nav-link {% if pageName == 'masaTanam' %}link-active{% endif %}">
           Masa Tanam<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="size-5 ml-2">
             <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
           </svg>
         </div>
         <ul class="dropdown-menu dropdown-menu-hover">
-          <li class="nav-submeny">
-            <a href="" class="nav-submenu-link">Realisasi Luas</a>
+          <li class="nav-submenu">
+            <a href="{% url 'realisasiPage' %}" class="nav-submenu-link">Realisasi Luas</a>
           </li>
           <li class="nav-submeny">
-            <a href="" class="nav-submenu-link">Produktivitas Padi</a>
+            <a href="{% url 'produktivitasPage' %}" class="nav-submenu-link">Produktivitas Padi</a>
           </li>
         </ul>
       </li>
+      <li class="nav-menu group">
+        <a href="{% url 'petaPengembanganPage' %}" class="nav-link {% if pageName == 'pengembangan' %} link-active {% endif %}">Pengembangan D.I.</a>
+      </li>
 
       {% comment %}========== Data Monitoring =========={% endcomment %}
-      <li class="nav-menu group">
+      {% comment %} <li class="nav-menu group">
         <a href="" class="nav-link">Monitoring</a>
-      </li>
+      </li> {% endcomment %}
     </ul>
     <a href="" class="bg-accent-color py-1.5 px-5 font-medium rounded-lg text-lg transition-all duration-300 ease-in-out hover:bg-accent-color/75 hover:text-primary-color">Login</a>
   </div>

@@ -6,7 +6,7 @@ from django.core.paginator import Paginator
 # Create your views here.
 def daftar_p3a_view(request):
 
-    data_p3a = P3AModel.objects.all()
+    data_p3a = P3AModel.objects.all().order_by("id")
     paginator = Paginator(data_p3a, 10)
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)

@@ -64,7 +64,7 @@ class RealisasiLuasTanamAdmin(admin.ModelAdmin):
         "area_tanam",
         "ip_ada",
         "persen_realisasi",
-        "sumber_data",
+        # "sumber_data",
     ]
     list_filter = ["th"]
     readonly_fields = ["area_tanam", "ip_ada", "persen_realisasi"]
@@ -72,7 +72,7 @@ class RealisasiLuasTanamAdmin(admin.ModelAdmin):
     search_fields = ["sumber_data", "link_sumber", "th"]
 
     fieldsets = (
-        ("Informasi data", {"fields": ("th", "sumber_data", "link_sumber")}),
+        ("Informasi data", {"fields": ["th"]}),
         (
             "Data Luas Tanam (Ha)",
             {"fields": ("luas_potensial", "mt1", "mt2", "mt3", "area_tanam")},
